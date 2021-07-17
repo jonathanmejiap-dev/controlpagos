@@ -6,14 +6,14 @@
     <meta property='og:locale' content='es_ES' />
     <meta property='og:type' content='website' />
     <meta property='og:title'
-        content="@yield('titulo', 'CONTROL DE PAGOS - IESTP Señor de la Divina Misericordia - Ocros')" />
+        content="@yield('titulo', 'SEGUIMIENTO DE EGRESADOS - IESTP Señor de la Divina Misericordia - Ocros')" />
         <meta property='og:site_name' content='IESTP Señor de la Divina Misericordia - Ocros'/>
     <meta property='og:url' content="@yield('url_redes','')"/>
-	<meta property='og:site_name' content='@yield('titulo', 'CONTROL DE PAGOS - IESTP Señor de la Divina Misericordia - Ocros')'/>
+	<meta property='og:site_name' content='@yield('titulo', 'SEGUIMIENTO DE EGRESADOS - IESTP Señor de la Divina Misericordia - Ocros')'/>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>@yield('titulo', 'CONTROL DE PAGOS - IESTP Señor de la Divina Misericordia - Ocros')</title>
+    <title>@yield('titulo', 'SEGUIMIENTO DE EGRESADOS - IESTP Señor de la Divina Misericordia - Ocros')</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -37,7 +37,7 @@
         <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
             <a href="{{ url('/') }}"
                 class="my-0 mr-md-auto font-weight-normal text-center font-weight-bold" >
-                <i class="fas fa-cash-register"></i> CONTROL DE PAGOS <br>IESTP Señor de la Divina Misericordia</a>
+                <i class="fab fa-searchengin"></i> SEGUIMIENTO DE EGRESADOS <br>IESTP Señor de la Divina Misericordia</a>
             
             <nav class="my-2 my-md-0 mr-md-3">
               <a href="https://isdm.edu.pe"

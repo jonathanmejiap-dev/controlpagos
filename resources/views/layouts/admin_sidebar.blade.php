@@ -17,7 +17,14 @@
     <li class="nav-item active">
         <a class="nav-link" href="{{ route('home') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Página principal</span></a>
+            <span>Página principal</span>
+
+            <small class="badge badge-danger small float-right" >
+                <span id="nuevos_tramites">
+                    0
+                </span> new(s)
+            </small>
+        </a>
     </li>
 
     <!-- Divider -->
@@ -29,14 +36,10 @@
     </div>
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.pagos.index') }}">
+        <a class="nav-link" href="{{ route('admin.egresado.index') }}">
             <i class="fas fa-money-bill-alt"></i>
-            <span>Pagos</span> 
-            <small class="badge badge-danger small" >
-                
-            <span id="nuevos_tramites">
-                0
-            </span> nuevo(s)</small></a>
+            <span>Egresados</span> 
+            </a>
     </li>
 
     <!-- Nav Item - Pages Collapse Menu -->
@@ -68,6 +71,7 @@
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
+    {{-- 
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
             aria-controls="collapsePages">
@@ -78,15 +82,15 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Documentos</h6>
                 <a class="collapse-item" href="{{ route('admin.tupas.index') }}">Procedimientos</a>
-                {{-- <a class="collapse-item" href="register.html">Register</a>
+                <a class="collapse-item" href="register.html">Register</a>
                 <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
                 <div class="collapse-divider"></div>
                 <h6 class="collapse-header">Other Pages:</h6>
                 <a class="collapse-item" href="404.html">404 Page</a>
-                <a class="collapse-item" href="blank.html">Blank Page</a> --}}
+                <a class="collapse-item" href="blank.html">Blank Page</a> 
             </div>
         </div>
-    </li>
+    </li>--}}
 
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
@@ -149,7 +153,7 @@
                 var codigo = 1;
                 $.ajax({
                     type: "get",
-                    url: "{{ route('admin.pagos.contador_ajax') }}",
+                    url: "{{ route('admin.egresado.contador_ajax') }}",
                     data: {
                         codigo: codigo
                     },

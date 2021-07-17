@@ -16,9 +16,8 @@ use Illuminate\Support\Facades\Redirect;
 class PagesController extends Controller
 {
     public function index(){
-        $tupas = Tupa::where('estado','1')->get();
-        // dd($tupas);
-        return view('welcome', compact('tupas'));
+       
+        return view('welcome');
     }
     
     public function proceso(Request $request)

@@ -14,10 +14,10 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
         //factory(App\Navegante::class, 2)->create();
         $this->call(UsersSeeder::class);
-        $this->call(NaveganteSeeder::class);
-        $this->call(TupaSeeder::class);
+        // $this->call(NaveganteSeeder::class);
+        // $this->call(TupaSeeder::class);
         // $this->call(PagoTupaSeeder::class);
-        factory(App\Pago::class, 10)->create();
+        // factory(App\Pago::class, 10)->create();
         // $this->call(TipoDocumentoSeeder::class);
         // $this->call(ExpedienteSeeder::class);
         // $this->call(AreaSeeder::class);

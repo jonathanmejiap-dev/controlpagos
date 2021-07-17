@@ -17,10 +17,14 @@ use Illuminate\Support\Facades\Gate;
 // Route::get('/', function () {
 //     return view('welcome');
 // })->name('controlpago.index');
-Route::get('/', 'PagesController@index')->name('controlpago.index');
+
+/*****************SEGUIMIENTO EGRESADOS EXTERNO**************** */
+Route::get('/', 'PagesController@index')->name('egresado.index');
+
 
 /*****************CONTROL DE PAGOS**************** */
-Route::post('/registro/pago', 'PagoController@store')->name('pago.store');
+Route::post('/egresado/registro', 'EgresadoController@store')->name('egresado.store');
+Route::post('/consulta/pago', 'PagoController@consulta')->name('pago.consulta_ajax');
 
 
 
@@ -57,7 +61,7 @@ Route::group(
     ],
     function () {
 
-        //ADMINISTRACIÓN
+        
         Route::resource('/user', 'UserController', [
             'except' => [
                 'create',
@@ -65,7 +69,19 @@ Route::group(
             ]
         ])->names('user');
 
+        /*****************SEGUIMIENTO EGRESADOS INTERNO**************** */
         Route::get('/home', 'HomeController@index')->name('home');
+        Route::post('/egresado/{egresado}/detalle', 'EgresadoController@show')->name('admin.egresado.show');//usado
+        Route::delete('/egresado/eliminar/{egresado}', 'EgresadoController@destroy')->name('admin.egresado.destroy');//usado
+        Route::get('/egresado', 'EgresadoController@index')->name('admin.egresado.index');
+        Route::post('/egresado/{egre}', 'EgresadoController@aceptar')->name('admin.egresado.aceptar');
+        Route::get('/egresado/contador/nuevos/elementos', 'EgresadoController@contador_nuevo_egresado')->name('admin.egresado.contador_ajax'); //usado
+
+        Route::delete('/centro/laboral/eliminar/{centro}', 'Centro_laboralController@destroy')->name('admin.centro.destroy');//usado
+
+        
+
+        
 
         Route::get('/pagos', 'PagoController@index')->name('admin.pagos.index');//usado
         Route::get('/pagos/confirmados', 'PagoController@index_confirmados')->name('admin.pagos.index_confirmados');//usado

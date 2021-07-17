@@ -51,7 +51,7 @@
                         @guest
                             <li class="nav-item">
                                 {{-- <a class="nav-link" href="{{ route('login') }}">{{ __('Ingresar') }}</a> --}}
-                                <a class="nav-link" href="{{ route('controlpago.index') }}">{{ __('Volver') }}</a>
+                                <a class="nav-link" href="{{ route('egresado.index') }}">{{ __('Volver') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">

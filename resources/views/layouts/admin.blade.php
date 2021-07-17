@@ -6,15 +6,15 @@
     <meta property='og:locale' content='es_ES' />
     <meta property='og:type' content='website' />
     <meta property='og:title'
-        content="@yield('titulo', 'MESA DE PARTES - IESTP Señor de la Divina Misericordia - Ocros')" />
+        content="@yield('titulo', 'SEGUIMIENTO EGRESADOS - IESTP Señor de la Divina Misericordia - Ocros')" />
     <meta property='og:site_name' content='IESTP Señor de la Divina Misericordia - Ocros' />
     <meta property='og:url' content="@yield('url_redes','')" />
     <meta property='og:site_name' content='@yield('
-        titulo', 'MESA DE PARTES - IESTP Señor de la Divina Misericordia - Ocros' )' />
+        titulo', 'SEGUIMIENTO EGRESADOS - IESTP Señor de la Divina Misericordia - Ocros' )' />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>@yield('titulo', 'MESA DE PARTES - IESTP Señor de la Divina Misericordia - Ocros')</title>
+    <title>@yield('titulo', 'SEGUIMIENTO EGRESADOS - IESTP Señor de la Divina Misericordia - Ocros')</title>
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">

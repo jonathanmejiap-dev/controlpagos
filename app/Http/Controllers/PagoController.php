@@ -21,13 +21,13 @@ class PagoController extends Controller
             'operacion' => 'required|min:6|unique:pagos,num_op',
             'monto' => 'required|min:2',
             'archivo' => 'required',
+            'check_ok' => 'required',
 
         ]);
 
         //validamos el archivo
-      
-        $year = date('Y');
-        
+     
+
         if ($request->file('archivo')) {
             /* subimos la imagen original*/ 
             $archivo = $request->file('archivo')->store('public/voucher');
@@ -78,5 +78,14 @@ class PagoController extends Controller
         return redirect()->route('controlpago.index');
 
 
+    }
+
+    public function consulta(Request $request){
+
+        if ($request->ajax()) {
+            $pago = Pago::where('num_op',$request->get('codigo'))->first();
+            // json_decode();
+          return ($pago);
+        }
     }
 }

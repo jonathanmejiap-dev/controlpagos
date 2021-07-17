@@ -9,7 +9,7 @@
             @php        
                 
                 $egresados = App\Egresado::orderBy('created_at', 'desc')
-                            ->where('estado','0')->get();
+                            ->where('estado','1')->get();
                 
                 
             @endphp
@@ -33,8 +33,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <hr>
-                        <h3 >Egresados que enviaron datos</h3>
-                        <p class="mb-4">Corroborar información y admitir</p>
+                        <h3 class="mb-4">Egresados registrados  <span class="badge badge-success">ACEPTADOS</span></h3>
                         <table id="egresados" class="table table-striped table-bordered dt-responsive nowrap"
                             style="width:100%">
                             <thead>
@@ -46,7 +45,7 @@
                                     <th>Telefono</th>
                                     <th>Registrado</th>
                                     <th>Trabaja</th>
-                                    <th>Opciones -</th>
+                                    <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -119,12 +118,8 @@
 
                                             <form action="{{ route('admin.egresado.show', $egre) }}" method="POST">
                                                 @csrf
-                                                <button class="btn btn-primary btn-sm float-left ml-2" title="Ver detalles"><i
+                                                <button class="btn btn-primary float-left ml-2" title="Ver detalles"><i
                                                         class="fas fa-info-circle"></i></button>
-                                            </form>
-                                            <form action="{{ route('admin.egresado.aceptar', $egre) }}" method="POST">
-                                                @csrf
-                                                <button class="btn btn-info btn-sm float-left ml-2" title="Aceptar"><i class="far fa-check-square"></i></button>
                                             </form>
                                             @can('haveaccess', 'role.index')
                                             {{-- ELIMINAR EGRESADO --}}
@@ -132,7 +127,7 @@
                                                 action="{{ route('admin.egresado.destroy', $egre) }}">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button class="btn btn-danger btn-sm float-right mr-2"
+                                                <button class="btn btn-danger float-right mr-2"
                                                     title="Eliminar egresado"
                                                     onclick="return confirm('Estas seguro que deseas eliminar la publicación')">
                                                     <i class="fas fa-trash-alt"></i>
